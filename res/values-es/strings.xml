@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MovilQuiz</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="question_text"> </string>
+    <string name="true_button">Verdadero</string>
+    <string name="false_button">Falso</string>
+    <string name="reiniciar_button">Reiniciar</string>
+    <string name="correct_toast">Correcto!</string>
+    <string name="incorrect_toast">Incorrecto!</string>
+    <string name="Score">Puntaje: </string>
+    <string name="MensajeFinal">Este es tu puntaje final: </string>
+    <string name="question1">Todo el sistema operativo Android se encuentra en la partición del sistema.</string>
+    <string name="question2">La partición del sistema es de sólo escritura, lo que significa que usted como desarrollador tiene mucha influencia sobre ella.</string>
+    <string name="question3">La partición de la tarjeta SD es una área limitada de almacenamiento masivo. </string>
+    <string name="question4">Cuando creamos una nueva aplicación, por ejemplo, Yamba, Android crea una carpeta especial para almacenar información de la aplicación, esta carpeta se encuentra en: / SD / Card / data </string>
+    <string name="question5">La partición AndroidSO es la partición principal que contiene todas las aplicaciones preinstaladas, las librerías del sistema, herramientas de línea de comando de Linux, y así sucesivamente.</string>
+    <string name="question6">Todas las aplicaciones descargadas se almacenan en la partición de datos del usuario</string>
+    <string name="question7">Las aplicaciones móviles son programas de software que se pueden descargar y se puede acceder directamente desde el teléfono o cualquier otro dispositivo móvil</string>
+    <string name="question8">Android es una plataforma de código abierto diseñado para dispositivos móviles.</string>
+    <string name="question9">Android es una plataforma de código cerrado.</string>
+    <string name="question10">Una actividad es por lo general una sola pantalla que el usuario ve en el dispositivo en un determinado instante.</string>
+    <string name="question11">Los intentos son mensajes que se envían entre los principales bloques de construcción.</string>
+    <string name="question12">Los servicios corren en segundo plano y tienen muchos componentes de interfaz de usuario.</string>
+    <string name="question13">Los proveedores de contenidos son las actividades que se ejecutan en segundo plano.</string>
+    <string name="question14">Un servicio puede ser dependiente o independiente.</string>
+    <string name="question15">Las actividades son la parte más invisible de una aplicación.</string>
+
+</resources>
