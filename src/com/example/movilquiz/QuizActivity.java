@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 public class QuizActivity extends Activity {
 	
+	
 	private Button mTrueButton;
 	private Button mFalseButton;
 	private Button mRefreshButton;
@@ -43,12 +44,8 @@ public class QuizActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+                
         setContentView(R.layout.activity_quiz);
-        mQuestionTextView=(TextView)findViewById(R.id.question_text_view);
-        mQuestionTextView2=(TextView)findViewById(R.id.textCount2);
-        mQuestionTextView2.setText(Integer.toString(score));
-        mQuestionTextView3=(TextView)findViewById(R.id.textCount);
-        mQuestionTextView3.setText(R.string.Score);
         for(int i = 0; i < mCurrentIndex.length; i++){
         	aleatorio = (int) Math.floor(Math.random()*(14+1));
         	while(aux[aleatorio]==1)
@@ -56,6 +53,18 @@ public class QuizActivity extends Activity {
         	aux[aleatorio]=1;
         	mCurrentIndex[i]=aleatorio;
         }
+        if (savedInstanceState != null) {
+            // Restore value of members from saved state
+            score = savedInstanceState.getInt(STATE_SCORE);
+            index = savedInstanceState.getInt(STATE_INDEX);
+            mCurrentIndex = savedInstanceState.getIntArray(STATE_MCINDEX);
+         }
+        mQuestionTextView=(TextView)findViewById(R.id.question_text_view);
+        mQuestionTextView2=(TextView)findViewById(R.id.textCount2);
+        mQuestionTextView2.setText(Integer.toString(score));
+        mQuestionTextView3=(TextView)findViewById(R.id.textCount);
+        mQuestionTextView3.setText(R.string.Score);
+        
         
         final int question = mQuestionBank[mCurrentIndex[index]].getQuestion();
         mQuestionTextView.setText(question);
@@ -137,7 +146,21 @@ public class QuizActivity extends Activity {
          
     }
     
-    private void checkAnswer(boolean userPressedTrue){
+    static final String STATE_SCORE = "playerScore";
+    static final String STATE_INDEX = "playerIndex";
+    static final String STATE_MCINDEX = "playerMCIndex";
+  
+    @Override
+	protected void onSaveInstanceState(Bundle savedInstanceState) {
+    	savedInstanceState.putInt(STATE_SCORE, score);
+    	savedInstanceState.putInt(STATE_INDEX, index);
+    	savedInstanceState.putIntArray(STATE_MCINDEX, mCurrentIndex);
+    	
+		
+	}
+
+
+	private void checkAnswer(boolean userPressedTrue){
         boolean answerIsTrue=mQuestionBank[mCurrentIndex[index]].isTrueQuestion();
         int messageResId=0;
         if(userPressedTrue==answerIsTrue){
